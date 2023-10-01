@@ -1,0 +1,26 @@
+<h1>{{ action }} Filme:</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label>Nome do Filme:</label>
+    <input name="titulo" value="{{ animal.titulo }}">
+  </div>
+  
+   <div>
+    <label>Resumo:</label>
+    <input name="resumo" value="{{ animal.resumo }}">
+  </div>
+
+ <div>
+    <label>Gênero:</label>
+    <input name="genero" value="{{ animal.genero }}">
+  </div>
+
+ <div>
+    <label>Data de lançamento:</label>
+    <input type="date" name="dataLancamento"  value="{{ animal.dataLancamento }}">
+  </div>
+
+  <input type="submit" value="Registrar">
+</form>

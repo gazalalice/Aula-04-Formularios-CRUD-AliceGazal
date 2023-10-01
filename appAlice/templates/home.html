@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Alice Pereira Gazal</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+
+  <div class="titulo">
+  <h1>Não compre, adote!</h1>
+  </div>
+
+  <div class="subtitulo">
+  <h2>Adotar um animal é muito mais do que apenas ter um bichinho de estimação. É sobre dar a chance a um animal que nunca soube o que é amor e amá-lo incondicionalmente.</h2>
+  </div>
+
+  <div class="texto1">
+  <p> 
+    E eu, em janeiro de 2021, tive <b><i>o prazer</i></b> de adotar o Melo, meu cachorro vira-lata. Ele foi encontrado abandonado no Morro do Alemão e acabou sendo resgado por uma ONG na pior situação possível. Ele na época tinha <u>3 meses</u> e estava com a barriga inchada de verme, completamente desnutrido e fraco. Depois de saber da sua história, minha família se apaixonou e não deu outra, adotamos o Melo <b><i>imediatamente!</i></b>
+  </p>
+  </div>
+  
+  <div class="blue-center">
+  <img
+src="{% static 'fotos/melo1.jpg' %}"width="300">
+  <img src="{% static  'fotos/melo2.jpg' %}" width="278">
+  <img src="{% static 'fotos/melo3.jpg' %}"width="300">
+  </div>
+
+  <div class="texto2">
+  <p">
+    Agora, o Melo já tem <u>2 anos!</u> Ele é o mais mimado da casa inteira e tem até a liberdade de escolher qual das camas ele vai dormir hoje. 
+  </p>
+  </div>
+
+  <div class="texto3">
+  <p>
+    <b><i>Fico grata por poder ter dado ao Melo uma segunda chance e ao mesmo tempo ter encontrado meu melhor amigo.</i></b>
+  </p>
+  </div>
+
+  <div class="textoTabela">
+  <h2>A tabela mostra o quão <b><i>mimado</i></b> o Melo consegue ser dentro da minha casa. </h2> 
+  </div>
+    
+  <div class="tabela">
+<table>
+    <tr>
+        <td></td>
+        <td><b>Comida</b></td>
+        <td><b>Cama</b></td>
+        <td><b>Passeio</b></td>
+        <td><b>Brincar</b></td>
+        <td><b>Carinho</b></td>
+        <td><b>Companhia</b></td>
+      
+    </tr>
+  <tr>
+        <td>Alice</td>
+        <td></td>
+        <td>x</td>
+        <td></td>
+        <td></td>
+        <td>x</td>
+        <td>x</td>
+  
+    </tr>
+  <tr>
+        <td>Vitória (irmã)</td>
+        <td></td>
+        <td>x</td>
+        <td></td>
+        <td>x</td>
+        <td></td>
+        <td></td>
+    </tr>
+  <tr>
+        <td>Jorge (pai)</td>
+        <td>x!</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>x</td>
+    
+    </tr>
+  <tr>
+        <td>Marcella (mãe)</td>
+        <td></td>
+        <td></td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td></td>
+    </tr>
+
+</table>
+  </div>
+
+  <div class="lista">
+  <h2>Melhores raças para serem adotadas por famílias com criança:</h2>
+  <!-- <ol>
+    <li>SRD (sem raça definida);</li>
+    <li>Golden Retriever;</li>
+    <li>Labrador;</li>
+    <li>Shih-tzu;</li>
+    <li>Beagle.</li>
+  </ol> -->
+  <ol>
+    {% for adocao in adocao %}
+    <li>
+      {{ adocao.titulo}} 
+      <a href="/adocao/update/{{ adocao.id }}">Atualizar</a>
+      <a href="/adocao/delete/{{ adocao.id }}">Remover</a>
+    </li>
+    {% endfor %}
+
+  </ol>
+
+  <a href= "/adocao">Adicionar Nova Raça</a>
+    
+  <h2>Filmes sobre animais de estimação que vão te convencer a ter um:</h2>
+  <!-- <ul>
+    <li>Beethoven, o Magnífico;</li>
+    <li>Marley & Eu;</li>
+    <li>Quatro vidas de um cachorro;</li>
+    <li>Sempre ao seu lado;</li>
+  </ul> -->
+  <ul>
+    {% for animal in animal %}
+    <li>
+      {{ animal.titulo}} 
+      <a href="/animal/update/{{ animal.id }}">Atualizar</a>
+      <a href="/animal/delete/{{ animal.id }}">Remover</a>
+    </li>
+    {% endfor %}
+    
+  </ul>
+
+      <a href= "/animal">Adicionar Novo Filme</a>
+
+  </div>
+
+  <div class = "form">
+  <p>Quero: </p>
+    
+    <form>
+    <input type="checkbox" name="opcao1" value="datas">Sempre estar por dentro nas datas e nos locais das feiras de adoção.<br>
+    <input type="checkbox" name="opcao2" value="ajuda">Saber quando uma ONG precisa de ajuda para poder fazer doações.<br>
+    <input type="checkbox" name="opcão3" value="moto">Ser considerado(a) para fazer lar temporário para os animais em fila de adoção.
+</form>
+
+<form method="get" action="envio_dados.php">
+    <input type="text" name="nome" placeholder="digite seu Nome aqui">
+    <input type="e-mail" name="email" placeholder="Digite seu e-mail">
+    <input type="submit" name="enviar" value="Enviar">    
+</form>
+  
+  </div>
+
+  
+  <div class="link">
+    <p>
+      Ficou com vontade de adotar um animal de estimação? 
+  </p>
+
+    <p>
+      Vem dar uma olhada em uma ONG super responsável no Rio de Janeiro e a que eu adotei o Melo: <a href="https://www.instagram.com/institutopatareal/"target="blank"><b>Instituto Pata Real</b></a>
+    </p>
+  </div>
+  
+  
+</body>
+
+</html>
+
+

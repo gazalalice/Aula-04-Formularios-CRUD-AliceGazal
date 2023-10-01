@@ -1,0 +1,73 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  background-color: lightyellow;
+  font-family: "Inconsolata";
+  padding-bottom: 50px
+
+}
+
+.blue-center{
+  display: flex;
+  justify-content: center;  
+}
+
+.titulo{
+  text-align: center;
+}
+
+.subtitulo{
+  text-align: center;
+}
+
+.texto1{
+  margin-right: 150px;
+  margin-left: 80px;
+  text-align: center;
+}
+
+.texto2{
+  margin-top: 75px;
+  margin-right: 150px;
+  margin-left: 80px;
+  text-align: center;
+}
+
+.texto3{
+  margin-right: 150px;
+  margin-left: 80px;
+  margin-bottom: 75px;
+  text-align: center;
+}
+.textoTabela{
+  margin-left: 100px;
+}
+
+.tabela{
+  display: flex; 
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 75px;
+}
+
+.lista{
+  margin-left: 100px;
+  margin-bottom: 75px;
+}
+
+.form{
+  display: flex; 
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 75px;
+}
+
+.link{
+  text-align: center;
+  border-bottom-style: solid;
+  border-width: 2.5px;
+}
+

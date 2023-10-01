@@ -1,0 +1,31 @@
+<h1>{{ action }} Raça:</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label>Nome da Raça:</label>
+    <input name="titulo"  value="{{ adocao.titulo }}">
+  </div>
+  
+   <div>
+    <label>Motivo:</label>
+    <input name="motivo" value="{{ adocao.motivo }}">
+  </div>
+
+ <div>
+    <label for="nivelAgitado"> Nível de agitado:</label>
+    <select id="nivelAgitado" name="nivelAgitado">
+      {% for nivel in nivelAgitado %}
+        <option value="{{ nivel.0 }}">{{nivel.1}}</option>
+      {% endfor %}   
+    </select>
+  </div>
+
+ <div>
+    <label>Expectativa de vida:</label>
+    <input type="number" name="expecVida" value="{{ adocao.expecVida }}">
+  </div>
+
+  <input type="submit" value="Registrar">
+</form>
+
